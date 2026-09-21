@@ -1,0 +1,21 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: loansService
+  config:
+    import: "optional:configserver:http://localhost:8071"
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
+
+#MANAGEMENT ENDPOINTS, allow the refresh endpoint to be called, so that we can refresh the configuration at runtime.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

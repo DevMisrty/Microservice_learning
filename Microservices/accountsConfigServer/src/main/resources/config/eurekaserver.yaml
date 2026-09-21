@@ -1,0 +1,15 @@
+server:
+  port: 8070
+
+eureka:
+  instance:
+    hostname: EurekaServer
+  client:
+    fetch-registry: false # (required ) tells not to fetch the registry from the eureka server
+    register-with-eureka: false # (required) tells not to register itself with the eureka server
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
+#  server:
+#    enable-self-preservation: false # (optional) tells not to destory/remove the instances if many instances are down, as this may tell
+#    # it is a Network issue, rather then the application issue, so it will not remove the instances, Mainly oin the production environment it is set as true..
+#    eviction-interval-timer-in-ms: 10000000 # (optional) tells the time interval in milliseconds to check the health of the instances

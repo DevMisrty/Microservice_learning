@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: accounts
+
+  config:
+    import: "optional:configserver:http://localhost:8071"
+
+#MANAGEMENT ENDPOINTS, allow the refresh endpoint to be called, so that we can refresh the configuration at runtime.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

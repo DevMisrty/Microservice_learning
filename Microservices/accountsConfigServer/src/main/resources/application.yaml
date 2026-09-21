@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: accountsConfigServer
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        # FOR THE CASE WHERE WE STORE THE CONFIGURATION FILES IN CLASS PATH
+        native:
+          search-locations: "file:/home/dev.mistry/Documents/Microservices-20260824T041758Z-1-001/Microservices/accountsConfigServer/src/main/resources/config"
+
+        # FOR THE CASE WHERE WE STORE THE CONFIGURATION FILES IN GITHUB
+#        git:
+#          uri: https://github.com/DevMisrty/AccountsConfigServer.git #defines the Github repository URL where the configuration files are stored.
+#          default-label: main #defines the default branch of the Git repository to use for configuration files.
+#          timeout: 5 #defines the timeout value (in seconds) for Git operations.
+#          clone-on-start: true #defines whether to clone the Git repository on application startup.
+#          force-pull: true #defines whether to force a pull of the Git repository on application startup.
+
+
+#MANAGEMENT ENDPOINTS, allow the refresh endpoint to be called, so that we can refresh the configuration at runtime.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+    port: 8071
+
+
+encrypt:
+  key: "12345AVDEX67AAA890"

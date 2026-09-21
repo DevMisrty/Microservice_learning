@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: accounts
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/accounts1db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+message: This is an Simple Application properties file for the account service, - dev server config file
+
+eureka:
+  client:
+    fetch-registry: true # (required ) tells not to fetch the registry from the eureka server
+    register-with-eureka: true # (required) tells not to register itself with the eureka server
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
+
+endpoint:
+  shutdown:
+    enabled: true

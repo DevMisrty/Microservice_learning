@@ -1,0 +1,38 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: cards
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+#MANAGEMENT ENDPOINTS, allow the refresh endpoint to be called, so that we can refresh the configuration at runtime.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+message: This is an simple config file for the cards service - prod server
+
+eureka:
+  client:
+    fetch-registry: true # (required ) tells not to fetch the registry from the eureka server
+    register-with-eureka: true # (required) tells not to register itself with the eureka server
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
+
+endpoints:
+  shutdown:
+    enabled: true
