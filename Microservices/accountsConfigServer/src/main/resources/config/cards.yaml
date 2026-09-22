@@ -26,6 +26,7 @@ management:
 
 message: This is an simple config file for the cards service - prod server
 
+# FETCHES THE RELEVANT DATA FROM THE SERVICE DISCOVERY.
 eureka:
   client:
     fetch-registry: true # (required ) tells not to fetch the registry from the eureka server
@@ -33,6 +34,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:8070/eureka/
 
+# USED TO ENABLE THE ENDPOINT USING WHICH WE CAN SHUT DOWN THE APPLICATION.
 endpoints:
   shutdown:
     enabled: true

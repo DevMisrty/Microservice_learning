@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/base")
+@RequestMapping("/account")
 @RequiredArgsConstructor
 public class BaseController {
 
