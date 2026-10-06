@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/eurekaServer/pom.xml" />
         <option value="$PROJECT_DIR$/eurekaserver/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/eurekaserver/pom.xml" />
+        <option value="$PROJECT_DIR$/gatewayServer/pom.xml" />
+        <option value="$PROJECT_DIR$/Microservices/gatewayServer/pom.xml" />
       </list>
     </option>
   </component>

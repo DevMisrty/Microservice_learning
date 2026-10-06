@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gatewayserver
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+
+eureka:
+  client:
+    fetch-registry: true # (required ) tells not to fetch the registry from the eureka server
+    register-with-eureka: true # (required) tells not to register itself with the eureka server
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      access: unrestricted
+
+info:
+  app:
+    name: gatewayServer
+    version: 0.0.1-SNAPSHOT
+    description: Gateway Server

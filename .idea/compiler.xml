@@ -7,23 +7,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gatewayServer" />
       </profile>
-      <profile name="Annotation profile for accounts" enabled="true">
+      <profile name="Annotation profile for eurekaserver" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
         <module name="eurekaserver" />
-        <module name="accounts" />
         <module name="accountsConfigServer" />
+        <module name="accounts" />
       </profile>
       <profile name="Annotation profile for loans" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
         </processorPath>
         <module name="loans" />
@@ -40,6 +43,7 @@
       <module name="accountsConfigServer" options="-parameters" />
       <module name="cards" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="gatewayServer" options="-parameters" />
       <module name="loans" options="-parameters" />
     </option>
   </component>
